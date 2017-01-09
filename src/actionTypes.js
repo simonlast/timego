@@ -1,0 +1,5 @@
+export const Initialize        = "Initialize"
+export const SetCurrentStep    = "SetCurrentStep"
+export const AddPlayerAction   = "AddPlayerAction"
+export const FirebaseUpdateKey = "FirebaseUpdateKey"
+export const CleanupFirebase   = "CleanupFirebase"

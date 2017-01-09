@@ -1,0 +1,9 @@
+.PlayerAvatar {
+	display: flex;
+	align-items: center;
+}
+
+.PlayerAvatarInner {
+	width: 100%;
+	text-align: center;
+}

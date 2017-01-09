@@ -1,0 +1,29 @@
+.TimeSlider {
+	width: 100%;
+	margin-top: 8px;
+	height: 32px;
+	background  : rgb(245,245,245);
+	position: relative;
+	cursor: -webkit-grab;
+}
+
+.TimeSlider:active {
+	cursor: -webkit-grabbing;
+}
+
+.TimeSliderControl {
+	width: 8px;
+	height: 32px;
+	position: absolute;
+	margin-left: -4px;
+	background: rgb(140,140,140);
+}
+
+.TimeSliderPlayerAction {
+	width: 4px;
+	height: 32px;
+	position: absolute;
+	margin-left: -2px;
+	background: rgb(140,140,140);
+	box-shadow: 1px 0px 0px 0px rgba(200,200,200,1);
+}

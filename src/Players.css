@@ -1,0 +1,25 @@
+.Players {
+	font-size: 18px;
+}
+
+.PlayerRow {
+	display: flex;
+	align-items: center;
+	padding-bottom: 8px;
+}
+
+.PlayerRow > * {
+	margin-right: 8px;
+}
+
+.PlayerName {
+	flex-grow: 1;
+}
+
+.PlayersPlayerAvatar {
+	width: 36px;
+	height: 36px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	font-size: 24px;
+}

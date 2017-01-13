@@ -2,7 +2,6 @@ import _                    from "lodash"
 import React, { Component } from "react"
 import {connect}            from "react-redux"
 import * as gridHelpers     from "./gridHelpers"
-import PlayerAvatar         from "./PlayerAvatar"
 import * as actionTypes     from "./actionTypes"
 import "./Grid.css"
 
@@ -24,11 +23,10 @@ class Grid extends Component {
 											<div
 												key={cellIndex}
 												className="GridCell pin"
+												style={{
+													background: player.color
+												}}
 											>
-												<PlayerAvatar
-													player={player}
-													extraClass="GridPlayerAvatar"
-												/>
 											</div>
 										)
 									}

@@ -2,7 +2,7 @@ import _                    from "lodash"
 import React, { Component } from "react"
 import ReactDOM             from "react-dom"
 import {connect}            from "react-redux"
-import constants            from "./constants"
+import * as constants       from "./constants"
 import * as actionTypes     from "./actionTypes"
 import "./TimeSlider.css"
 

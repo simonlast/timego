@@ -4,7 +4,7 @@
 
 body {
 	margin: 0;
-	background: rgb(140,140,140);
+	background: rgb(40,40,40);
 }
 
 #root {
@@ -15,18 +15,53 @@ body {
 }
 
 .App {
-	display: flex;
 	margin: 0 auto;
+}
+
+.AppMainButton {
+	width: 600px;
+	height: 100px;
 	padding: 12px;
+	font-size: 48px;
+	margin-bottom: 18px;
+	text-align: center;
+}
+
+.AppMainContainer {
+	width: 600px;
+	height: 600px;
+}
+
+.card {
 	background: white;
-	box-shadow: 11px 11px 0px 0px rgba(100,100,100,1);
+	/*box-shadow: 0px 0px 72px 10px rgba(0,0,0,0.75);*/
+	border-radius: 2px;
+	color: rgb(40,40,40);
+	position: relative;
 }
 
-.AppSidebarContainer {
-	width: 250px;
-	margin-right: 8px;
+.button {
+	cursor: pointer;
+	user-select: none;
+	position: relative;
 }
 
-.AppGridContainer {
+.button::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgb(40,40,40);
+	opacity: 0;
+	transition: opacity 150ms ease-in-out;
+}
 
+.button:hover::after {
+	opacity: 0.15;
+}
+
+.button:active::after {
+	opacity: 0.3;
 }

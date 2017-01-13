@@ -12,6 +12,13 @@
 	outline: 1px solid white;
 }
 
+.GridCell.pin {
+}
+
+.GridCell.territory {
+	opacity: 0.5;
+}
+
 .GridCell.empty::before {
 	display     : block;
 	content     : "";

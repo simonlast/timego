@@ -2,27 +2,23 @@ import _                from "lodash"
 import chance           from "chance"
 import { createStore }  from "redux"
 import * as actionTypes from "./actionTypes"
-import constants        from "./constants"
+import * as constants   from "./constants"
 import * as gridHelpers from "./gridHelpers"
 import firebase         from "./firebase"
 
 var rootRef
 
-const playerAvatarDefaults = [
+const playerDefaults = [
 	{
-		avatar : "🙃",
 		color  : "#95E1D3",
 	},
 	{
-		avatar : "🐝",
 		color  : "#FCE38A",
 	},
 	{
-		avatar : "🦋",
 		color  : "#EAFFD0",
 	},
 	{
-		avatar : "👀",
 		color  : "#F38181",
 	},
 ]
@@ -35,7 +31,6 @@ const initialState = {
 		{
 			[playerId: string]: {
 				name     : string,
-				avatar   : string // An emoji.
 				color    : string
 				lastSeen : number
 			}
@@ -103,7 +98,7 @@ const reducers = {
 		const currentPlayer = _.assign({
 			name     : chance().name(),
 			lastSeen : Date.now()
-		}, playerAvatarDefaults[_.random(0, playerAvatarDefaults.length - 1)])
+		}, playerDefaults[_.random(0, playerDefaults.length - 1)])
 
 		const playersRef       = rootRef.child("players")
 		const currentPlayerRef = playersRef.push(currentPlayer)
@@ -146,6 +141,12 @@ const reducers = {
 		playerActionsRef.push(playerAction)
 		return state
 	},
+
+	[actionTypes.StartNewGame]: function(state, action) {
+		rootRef.child("playerActions").set([])
+		rootRef.child("gameStart").set(Date.now() + 2000)
+		return state
+	}
 }
 
 const reducer = function(state = initialState, action) {
